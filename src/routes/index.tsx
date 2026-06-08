@@ -156,7 +156,7 @@ function Index() {
           <ResultCard
             result={result}
             img={resultImg}
-            fbShare={fbShare}
+            onShare={handleShare}
             onRetry={() => {
               setSelected(null);
               setStep("choose");
