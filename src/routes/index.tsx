@@ -7,6 +7,7 @@ import eyeBlue from "@/assets/eye-blue.jpg";
 import eyeGreen from "@/assets/eye-green.jpg";
 import eyeHazel from "@/assets/eye-hazel.jpg";
 import eyeGray from "@/assets/eye-gray.jpg";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/")({
   head: () => ({
