@@ -186,7 +186,93 @@ function Index() {
           <Heart className="h-3 w-3 fill-pink-400 stroke-pink-400" />
           Забавен тест за развлечение. Не е научно доказано.
         </p>
+
+        {/* Educational content for AdSense */}
+        <article className="mt-10 space-y-6 rounded-3xl border border-border bg-card p-6 text-card-foreground">
+          <header>
+            <h2 className="text-2xl font-bold">Цветът на очите и привличането</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Кратко въведение в това защо цветът на очите интригува хората от векове.
+            </p>
+          </header>
+
+          <section>
+            <h3 className="text-lg font-semibold">Какво определя цвета на очите?</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Цветът на очите се определя основно от количеството и разпределението на
+              меланина в ириса. Хората с повече меланин имат по-тъмни – кафяви или
+              почти черни очи, докато по-малкото меланин води до сини, сиви или зелени
+              нюанси. Лешниковите (пъстри) очи са комбинация, в която различни части
+              на ириса отразяват светлината по различен начин.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="text-lg font-semibold">Защо ни привличат определени цветове?</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Изследвания в областта на психологията на привличането показват, че
+              контрастът и редкостта често играят роля. Сините очи например се срещат
+              при около 8–10% от световното население, докато кафявите доминират със
+              около 70–80%. Това прави по-редките цветове особено запомнящи се при
+              първа среща, без обаче да определят дългосрочната съвместимост между
+              хората.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="text-lg font-semibold">Любопитни факти</h3>
+            <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
+              <li>Всички бебета със светла кожа се раждат със синкави очи; финалният цвят се установява около 6–12 месечна възраст.</li>
+              <li>Хетерохромията е състояние, при което двете очи имат различен цвят.</li>
+              <li>Зелените очи са най-редки – около 2% от хората в света.</li>
+              <li>Светлината и дрехите могат значително да променят възприемания цвят на очите.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 className="text-lg font-semibold">Често задавани въпроси</h3>
+            <div className="mt-3 space-y-3 text-sm leading-relaxed">
+              <details className="rounded-xl border border-border p-3">
+                <summary className="cursor-pointer font-medium text-card-foreground">
+                  Тестът научно доказан ли е?
+                </summary>
+                <p className="mt-2 text-muted-foreground">
+                  Не. Тестът е забавна игра, създадена за развлечение, и не замества
+                  психологическа или научна оценка.
+                </p>
+              </details>
+              <details className="rounded-xl border border-border p-3">
+                <summary className="cursor-pointer font-medium text-card-foreground">
+                  Колко време отнема?
+                </summary>
+                <p className="mt-2 text-muted-foreground">
+                  По-малко от 30 секунди – избираш цвят и виждаш резултата.
+                </p>
+              </details>
+              <details className="rounded-xl border border-border p-3">
+                <summary className="cursor-pointer font-medium text-card-foreground">
+                  Запазвате ли мои лични данни?
+                </summary>
+                <p className="mt-2 text-muted-foreground">
+                  Не. Не изискваме регистрация. Повече информация в нашата{" "}
+                  <a href="/privacy" className="text-primary underline">политика за поверителност</a>.
+                </p>
+              </details>
+              <details className="rounded-xl border border-border p-3">
+                <summary className="cursor-pointer font-medium text-card-foreground">
+                  Мога ли да споделя резултата?
+                </summary>
+                <p className="mt-2 text-muted-foreground">
+                  Да – с бутона „Сподели" можеш да го изпратиш на приятели във Facebook,
+                  Messenger или чрез копиран линк.
+                </p>
+              </details>
+            </div>
+          </section>
+        </article>
       </main>
+
+      <SiteFooter />
     </div>
   );
 }
