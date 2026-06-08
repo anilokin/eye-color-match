@@ -76,7 +76,28 @@ function Index() {
   const resultImg = result ? EYES.find((e) => e.key === result.match)!.img : null;
 
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+  const shareTitle = "Какъв цвят очи на партньора ти подхожда най-много?";
+  const shareText = result
+    ? `Моят резултат: ${result.title} – ${result.pct}% съвместимост! 💕 Направи теста и ти:`
+    : "Направи този забавен тест за съвместимост! 💕";
   const fbShare = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+
+  const handleShare = async () => {
+    if (typeof navigator !== "undefined" && navigator.share) {
+      try {
+        await navigator.share({ title: shareTitle, text: shareText, url: shareUrl });
+        return;
+      } catch (err) {
+        if ((err as DOMException)?.name === "AbortError") return;
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
+      alert("Линкът е копиран! Сподели го с приятели 💕");
+    } catch {
+      window.open(fbShare, "_blank", "noopener,noreferrer");
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -135,7 +156,7 @@ function Index() {
           <ResultCard
             result={result}
             img={resultImg}
-            fbShare={fbShare}
+            onShare={handleShare}
             onRetry={() => {
               setSelected(null);
               setStep("choose");
@@ -151,15 +172,13 @@ function Index() {
           <p className="mt-1 text-sm text-muted-foreground">
             Да видим на кого какъв цвят очи подхожда най-много 💕
           </p>
-          <a
-            href={fbShare}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 flex items-center justify-center gap-2 rounded-2xl bg-[#1877F2] px-5 py-3 font-semibold text-white shadow-md transition active:scale-95"
+          <button
+            onClick={handleShare}
+            className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl bg-[#1877F2] px-5 py-3 font-semibold text-white shadow-md transition active:scale-95"
           >
-            <Facebook className="h-5 w-5 fill-white" />
-            Сподели във Facebook
-          </a>
+            <Share2 className="h-5 w-5" />
+            Сподели
+          </button>
         </section>
 
         <p className="mt-6 flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">
@@ -268,12 +287,12 @@ function ChooseCard({
 function ResultCard({
   result,
   img,
-  fbShare,
+  onShare,
   onRetry,
 }: {
   result: { pct: number; title: string; desc: string; quote: string };
   img: string;
-  fbShare: string;
+  onShare: () => void;
   onRetry: () => void;
 }) {
   return (
@@ -320,16 +339,14 @@ function ResultCard({
         <p className="text-sm text-card-foreground">{result.quote}</p>
       </div>
 
-      <a
-        href={fbShare}
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        onClick={onShare}
         className="mt-5 flex w-full items-center justify-center gap-2 rounded-full px-6 py-4 font-semibold text-white shadow-[var(--shadow-glow)] transition active:scale-95"
         style={{ background: "var(--gradient-primary)" }}
       >
         <Share2 className="h-5 w-5" />
         Сподели резултата
-      </a>
+      </button>
       <button
         onClick={onRetry}
         className="mt-3 flex w-full items-center justify-center gap-2 rounded-full border border-border bg-card px-6 py-4 font-semibold text-card-foreground transition active:scale-95"
