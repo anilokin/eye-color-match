@@ -340,7 +340,7 @@ function ResultCard({
       </div>
 
       <button
-        onClick={handleShare}
+        onClick={onShare}
         className="mt-5 flex w-full items-center justify-center gap-2 rounded-full px-6 py-4 font-semibold text-white shadow-[var(--shadow-glow)] transition active:scale-95"
         style={{ background: "var(--gradient-primary)" }}
       >
