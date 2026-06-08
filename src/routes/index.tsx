@@ -289,12 +289,12 @@ function ChooseCard({
 function ResultCard({
   result,
   img,
-  fbShare,
+  onShare,
   onRetry,
 }: {
   result: { pct: number; title: string; desc: string; quote: string };
   img: string;
-  fbShare: string;
+  onShare: () => void;
   onRetry: () => void;
 }) {
   return (
