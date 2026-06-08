@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Eye Color Match" },
+      { name: "description", content: "Какъв цвят на очи на партньор Ви подхожда най-много?" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Eye Color Match" },
+      { property: "og:description", content: "Какъв цвят на очи на партньор Ви подхожда най-много?" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Eye Color Match" },
+      { name: "twitter:description", content: "Какъв цвят на очи на партньор Ви подхожда най-много?" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/88dcd261-799f-40b2-bd6b-89267b8df006/id-preview-8c39453e--19ef1870-3547-4d05-9b4e-99b4930635b2.lovable.app-1780913239265.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/88dcd261-799f-40b2-bd6b-89267b8df006/id-preview-8c39453e--19ef1870-3547-4d05-9b4e-99b4930635b2.lovable.app-1780913239265.png" },
     ],
     links: [
       {
