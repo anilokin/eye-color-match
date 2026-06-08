@@ -76,7 +76,28 @@ function Index() {
   const resultImg = result ? EYES.find((e) => e.key === result.match)!.img : null;
 
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+  const shareTitle = "Какъв цвят очи на партньора ти подхожда най-много?";
+  const shareText = result
+    ? `Моят резултат: ${result.title} – ${result.pct}% съвместимост! 💕 Направи теста и ти:`
+    : "Направи този забавен тест за съвместимост! 💕";
   const fbShare = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+
+  const handleShare = async () => {
+    if (typeof navigator !== "undefined" && navigator.share) {
+      try {
+        await navigator.share({ title: shareTitle, text: shareText, url: shareUrl });
+        return;
+      } catch (err) {
+        if ((err as DOMException)?.name === "AbortError") return;
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
+      alert("Линкът е копиран! Сподели го с приятели 💕");
+    } catch {
+      window.open(fbShare, "_blank", "noopener,noreferrer");
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
