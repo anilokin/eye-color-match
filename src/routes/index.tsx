@@ -172,15 +172,13 @@ function Index() {
           <p className="mt-1 text-sm text-muted-foreground">
             Да видим на кого какъв цвят очи подхожда най-много 💕
           </p>
-          <a
-            href={fbShare}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 flex items-center justify-center gap-2 rounded-2xl bg-[#1877F2] px-5 py-3 font-semibold text-white shadow-md transition active:scale-95"
+          <button
+            onClick={handleShare}
+            className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl bg-[#1877F2] px-5 py-3 font-semibold text-white shadow-md transition active:scale-95"
           >
-            <Facebook className="h-5 w-5 fill-white" />
-            Сподели във Facebook
-          </a>
+            <Share2 className="h-5 w-5" />
+            Сподели
+          </button>
         </section>
 
         <p className="mt-6 flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">
