@@ -341,16 +341,14 @@ function ResultCard({
         <p className="text-sm text-card-foreground">{result.quote}</p>
       </div>
 
-      <a
-        href={fbShare}
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        onClick={handleShare}
         className="mt-5 flex w-full items-center justify-center gap-2 rounded-full px-6 py-4 font-semibold text-white shadow-[var(--shadow-glow)] transition active:scale-95"
         style={{ background: "var(--gradient-primary)" }}
       >
         <Share2 className="h-5 w-5" />
         Сподели резултата
-      </a>
+      </button>
       <button
         onClick={onRetry}
         className="mt-3 flex w-full items-center justify-center gap-2 rounded-full border border-border bg-card px-6 py-4 font-semibold text-card-foreground transition active:scale-95"
