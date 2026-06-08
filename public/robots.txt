@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eye-color-match.lovable.app/sitemap.xml
