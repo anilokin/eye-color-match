@@ -165,6 +165,7 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SiteHeader />
       {/* HERO */}
       <section
         className="relative overflow-hidden text-white"
