@@ -8,6 +8,60 @@ import eyeGreen from "@/assets/eye-green.jpg";
 import eyeHazel from "@/assets/eye-hazel.jpg";
 import eyeGray from "@/assets/eye-gray.jpg";
 import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+
+const SITE = "https://eye-color-match.lovable.app";
+
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE}/#website`,
+      url: SITE,
+      name: "Eye Color Match",
+      inLanguage: "bg",
+      description: "Забавен тест: открий какъв цвят очи на партньора ти подхожда най-много.",
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${SITE}/#webpage`,
+      url: SITE,
+      name: "Какъв цвят очи на партньора ти подхожда най-много?",
+      isPartOf: { "@id": `${SITE}/#website` },
+      inLanguage: "bg",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Научен ли е този тест?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Не. Тестът е създаден с развлекателна цел и резултатите не се основават на научни изследвания.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Запазвате ли мои лични данни?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Не изискваме регистрация и не събираме лични данни. Повече информация има в политиката за поверителност.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Мога ли да споделя резултата?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Да – с бутона „Сподели“ можеш да изпратиш резултата на приятели във Facebook, Messenger или чрез копиран линк.",
+          },
+        },
+      ],
+    },
+  ],
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -16,6 +70,15 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Забавен тест: открий какъв цвят очи на партньора ти подхожда най-много!" },
       { property: "og:title", content: "Какъв цвят очи на партньора ти подхожда най-много?" },
       { property: "og:description", content: "Направи теста и сподели резултата с приятели!" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(JSON_LD),
+      },
     ],
   }),
   component: Index,
