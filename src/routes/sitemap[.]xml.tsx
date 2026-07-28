@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 const BASE = "https://eye-color-match.lovable.app";
-const PAGES = ["/", "/about", "/contact", "/privacy", "/terms"];
+const PAGES = ["/", "/about", "/contact", "/privacy", "/terms", "/disclaimer"];
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {

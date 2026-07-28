@@ -20,6 +20,10 @@ export function SiteFooter() {
           <Link to="/terms" className="hover:text-foreground hover:underline">
             Условия
           </Link>
+          <Link to="/disclaimer" className="hover:text-foreground hover:underline">
+            Отказ от отговорност
+          </Link>
+
         </nav>
         <p className="mt-4 text-center text-xs">
           © {new Date().getFullYear()} Eye Color Match. Всички права запазени.
